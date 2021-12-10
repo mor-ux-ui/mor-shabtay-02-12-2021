@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;800&display=swap");
+
+$font-stack: "Khula", sans-serif;
+$p-color: #313667;
+$p-header-color: #313667;
+$p-bg-light-color: #f4f8f9;
+$p-light-blue-color: #e1e7f9;
+$border-radius: 0.5rem;
+$error-red: #db4a4a;
+
+@mixin light-theme($theme: $p-bg-light-color) {
+    background: $theme;
+    color: $p-color;
+}
+@mixin dark-theme($theme: $p-header-color) {
+    background: $theme;
+    color: rgb(235, 235, 235);
+}
+html {
+    font-size: 16px;
+}
+body {
+    @include light-theme;
+    font: $font-stack;
+}
+header {
+    @include dark-theme;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    a {
+        color: $p-light-blue-color;
+        text-decoration: none;
+        margin-left: 1rem;
+    }
+    &.sub-header {
+        background-color: $p-light-blue-color;
+        font-size: 1rem;
+        a {
+            background-color: transparent;
+            color: $p-color;
+        }
+    }
+}
+textarea:focus,
+input:focus {
+    outline: none;
+}
+.close-x {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.container {
+    padding: 0.5rem;
+}
+.flexy {
+    display: flex;
+}
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $p-light-blue-color;
+    transition: all 0.2s;
+    font-weight: bold;
+    &:enabled {
+        cursor: pointer;
+    }
+    &:hover:enabled {
+        background-color: $p-color;
+        color: $p-bg-light-color;
+    }
+}
+input {
+    width: 10rem;
+    padding: 0 0.5rem;
+    height: 40px;
+    font-family: "Khula";
+    &.auto-complete-input {
+        border-radius: $border-radius;
+        border: 1px solid $p-light-blue-color;
+    }
+    &.error {
+        border: 2px solid $error-red;
+    }
+}
+h3 {
+    font-size: calc(1rem + 0.6vw);
+    margin: 0;
+}
+.active {
+    font-weight: bold;
+}
+.back-drop {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #0000005e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table {
+    display: flex;
+    flex-direction: column;
+    .row {
+        display: flex;
+        padding: 0.5rem;
+        flex-grow: 1;
+        font-size: 0.8rem;
+        height: 2.5rem;
+        align-items: center;
+        border-radius: $border-radius;
+        background-color: white;
+        margin: 5px 0;
+        .prod-ttl {
+            width: 40vw;
+            font-weight: bold;
+        }
+        .prod-ttl-txt {
+            width: 90%;
+        }
+        .props {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        .actions {
+            width: 6rem;
+        }
+        .other-prod-props {
+            flex-grow: 1;
+            display: flex;
+        }
+    }
+    .th {
+        font-weight: bold;
+        background-color: initial;
+    }
+    .col,
+    .col-h {
+        flex-grow: 1;
+        width: 0;
+    }
+    .action-col {
+        width: 6rem;
+        flex-grow: initial;
+    }
+}
+
+.modal-inner-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: $border-radius;
+    box-shadow: 0px 0px 10px #00000029;
+}
+p.error-text {
+    color: $error-red;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 2rem;
+    height: 5rem;
+}
+.control-group {
+    display: flex;
+    justify-content: space-between;
+}
+.form-actions {
+    text-align: center;
+    button {
+        height: 40px;
+        width: 50%;
+    }
+}
+
+.actions-row {
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.total-line {
+    display: flex;
+    justify-content: center;
+    background-color: $p-color;
+    color: $p-bg-light-color;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 769px) {
+    html {
+        font-size: 12px;
+    }
+    .table {
+        
+        .row {
+            display: flex;
+            padding: 0.5rem;
+            flex-grow: 1;
+            height: initial;
+            font-size: 1rem;
+            align-items: stretch;
+            border-radius: 0.5rem;
+            background-color: white;
+            margin: 5px 0;
+            flex-direction: row;
+            &.th {
+                display: none;
+            }
+            .props {
+                width: 0;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .prod-ttl {
+                    width: 100%;
+                    .prod-ttl-txt {
+                        white-space: pre;
+                        font-size: 1rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .other-prod-props {
+                    display: flex;
+                    margin: 7px 0;
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+
+            .actions {
+                width: initial;
+                display: flex;
+                align-items: stretch;
+
+                button.btn {
+                    margin-left: auto;
+                    width: initial;
+                }
+            }
+        }
+        &.store {
+            .th.row {
+                display: flex;
+            }
+        }
+    }
+
+    .control-group {
+        flex-direction: column;
+    }
+    input {
+        width: 50vw;
+    }
+}
