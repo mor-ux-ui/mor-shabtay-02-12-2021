@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mor-shabtay-02-12-2021/static/css/main.1693035d.chunk.css",
-    "main.js": "/mor-shabtay-02-12-2021/static/js/main.979d74c4.chunk.js",
-    "main.js.map": "/mor-shabtay-02-12-2021/static/js/main.979d74c4.chunk.js.map",
+    "main.js": "/mor-shabtay-02-12-2021/static/js/main.f4c8534c.chunk.js",
+    "main.js.map": "/mor-shabtay-02-12-2021/static/js/main.f4c8534c.chunk.js.map",
     "runtime-main.js": "/mor-shabtay-02-12-2021/static/js/runtime-main.0bd68647.js",
     "runtime-main.js.map": "/mor-shabtay-02-12-2021/static/js/runtime-main.0bd68647.js.map",
     "static/js/2.f8321356.chunk.js": "/mor-shabtay-02-12-2021/static/js/2.f8321356.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0bd68647.js",
     "static/js/2.f8321356.chunk.js",
     "static/css/main.1693035d.chunk.css",
-    "static/js/main.979d74c4.chunk.js"
+    "static/js/main.f4c8534c.chunk.js"
   ]
 }
